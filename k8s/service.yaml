@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-app-service
+spec:
+  selector:
+    app: react
+  ports:
+  - protocol: TCP
+    port: 3001   # port on which the service will be exposed.
+    targetPort: 3000  #Actula application port
+  type: LoadBalancer   # Here we are type loadbalancer, It allow our application to access externally means we can connect with application through browser
